@@ -1,0 +1,35 @@
+<form cForm>
+  <c-row class="justify-content-center mb-2">
+    <c-col sm="12" md="10" lg="10" xl="8"
+      ><c-row
+        ><input
+          [(ngModel)]="message"
+          name="message"
+          (ngModelChange)="onInputChange($event)"
+          [valid]="error.length === 0 ? undefined : false"
+          sizing="lg"
+          cFormControl
+          type="text"
+          placeholder="Enter message here" /></c-row
+    ></c-col>
+    <c-col sm="12" md="10" lg="10" xl="8">
+      <c-row class="text-danger">{{ error }}</c-row>
+    </c-col>
+  </c-row>
+
+  <c-row class="text-center mb-5">
+    <c-col>
+      <button
+        type="submit"
+        class="m-2"
+        cButton
+        color="primary"
+        variant="outline"
+        (click)="onPostClick()"
+      >
+        Post!
+      </button>
+      <message-delete-all></message-delete-all>
+    </c-col>
+  </c-row>
+</form>

@@ -1,0 +1,24 @@
+<c-dropdown>
+  <button cButton cDropdownToggle color="secondary" variant="outline" size="lg">
+    Sort by
+  </button>
+  <ul cDropdownMenu>
+    <button
+      cDropdownItem
+      *ngFor="let option of MessageSortOptions"
+      (click)="sortChange(option.value)"
+    >
+      <div class="d-flex justify-content-between">
+        <div class="me-3">
+          <svg
+            *ngIf="sortOrder === option.value"
+            cIcon
+            name="cilCheckAlt"
+            size="m"
+          ></svg>
+        </div>
+        <div>{{ option.label }}</div>
+      </div>
+    </button>
+  </ul>
+</c-dropdown>

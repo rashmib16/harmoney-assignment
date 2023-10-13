@@ -1,0 +1,16 @@
+<c-row class="justify-content-center">
+  <c-col class="col-sm-12 col-md-10 col-lg-10 col-xl-8">
+    <div class="mb-3 d-flex justify-content-end">
+      <message-sort
+        [sortOrder]="$sortOrder | async"
+        (onSortOrderChange)="sortOrderChange($event)"
+      ></message-sort>
+    </div>
+    <ng-container *ngFor="let message of $messages | async">
+      <message-box
+        [message]="message"
+        (onDelete)="deleteMessage($event)"
+      ></message-box
+    ></ng-container>
+  </c-col>
+</c-row>

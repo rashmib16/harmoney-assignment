@@ -1,0 +1,21 @@
+<button
+  class="m-2"
+  cButton
+  color="danger"
+  variant="outline"
+  (click)="confirmDelete()"
+>
+  Delete All
+</button>
+
+<c-modal [visible]="visible">
+  <c-modal-header>
+    <h5 cModalTitle>Delete All</h5>
+    <button (click)="closeModal()" cButtonClose></button>
+  </c-modal-header>
+  <c-modal-body>Are you sure you want to delete all messages?</c-modal-body>
+  <c-modal-footer>
+    <button (click)="closeModal()" cButton color="secondary">No</button>
+    <button (click)="deleteAll()" cButton color="danger">Yes</button>
+  </c-modal-footer>
+</c-modal>
